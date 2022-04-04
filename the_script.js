@@ -1,4 +1,6 @@
 let nav = 0;
+let monthDate  = 0;
+let yearDate = 0;
 let clicked = null;
 let events = localStorage.getItem("events")
   ? JSON.parse(localStorage.getItem("events"))
@@ -154,6 +156,12 @@ function Populate() {
     option.setAttribute("value", actualDate.getFullYear() - i); //it sets the year that i specified
     year.appendChild(option);
   }
+}
+
+function VerifyDate(){
+  monthDate = nav % 12;// this will set the month of the agenda
+  yearDate = nav / 12;//this will set the year to add to the year of the actual date
+  //new Date(yearDate, monthDate, 27); 
 }
 //$(document).ready(GeneraAgenda());
 GeneraAgenda();
