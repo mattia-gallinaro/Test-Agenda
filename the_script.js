@@ -43,8 +43,9 @@ const year = document.getElementById("year");
 function GeneraAgenda() {
   //const date = new Date(year, month , 0);//to get the last day of the previous month
   const dateNow = new Date(); //to get the date of today
-
+  console.log(dateNow);
   if (nav !== 0) {
+    dateNow.setDate(28);
     dateNow.setMonth(new Date().getMonth() + nav);
   }
 
